@@ -35,7 +35,7 @@ app.controller('MyApp.PostPageController',[
 
         $scope.create = function (){
             console.log('creating post',$scope.post);
-            console.log('**test**');
+
             //making server call
             $http ({
                 url:'http://localhost:3000/posts',
@@ -52,18 +52,48 @@ app.controller('MyApp.PostPageController',[
             })
         }
         $scope.readAll = function(){
+            console.log('updatepost');
             $http ({
                 url:'http://localhost:3000/posts',
 
-                method:'GET',
+                method:'Get',
 
-                data:$scope.post
             })
-            .success(function(response){
+            .success(function (response){
                 console.log('thisis the response', response);
                 $scope.postList = response;
             })
-            .error(function(response){
+            .error(function (response){
+                console.error('this is the error', response);
+            })
+        }
+        $scope.updatePost = function(){
+            console.log('update post working');
+            $http ({
+                url:'http://localhost:3000/posts/'+                $scope.post.id,
+                method:'PUT',
+                data:$scope.post
+            })
+            .success(function (response){
+                console.log('thisis the response', response);
+
+            })
+            .error(function (response){
+                console.error('this is the error', response);
+            })
+        }
+        $scope.deletePost = function(){
+            console.log('delete post working');
+            $http ({
+                url:'http://localhost:3000/posts/'+                $scope.post.id,
+                method:'DELETE',
+                data:$scope.post
+            })
+            .success(function (response){
+                console.log('thisis the response', response);
+
+            })
+            .error(function (response){
                 console.error('this is the error', response);
             })
         }
