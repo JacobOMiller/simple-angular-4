@@ -1,0 +1,21 @@
+{
+  "name": "simple-anguler-4",
+  "description": "simple angular project",
+  "main": "index.js",
+  "authors": [
+    "Jacob Miller"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-ui-router": "^0.3.2"
+  }
+}
