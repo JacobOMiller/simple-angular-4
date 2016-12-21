@@ -35,6 +35,37 @@ app.controller('MyApp.PostPageController',[
 
         $scope.create = function (){
             console.log('creating post',$scope.post);
+            console.log('**test**');
+            //making server call
+            $http ({
+                url:'http://localhost:3000/posts',
+
+                method:'POST',
+
+                data:$scope.post
+            })
+            .success(function(response){
+                console.log('thisis the response', response);
+            })
+            .error(function(response){
+                console.error('this is the error', response);
+            })
+        }
+        $scope.readAll = function(){
+            $http ({
+                url:'http://localhost:3000/posts',
+
+                method:'GET',
+
+                data:$scope.post
+            })
+            .success(function(response){
+                console.log('thisis the response', response);
+                $scope.postList = response;
+            })
+            .error(function(response){
+                console.error('this is the error', response);
+            })
         }
     }
 ])

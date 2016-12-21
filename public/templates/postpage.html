@@ -1,4 +1,6 @@
 <h1>Post  Page</h1>
+
+<!--write-->
 <form ng-submit="create ()">
     <div>
         <label>Title</label>
@@ -9,3 +11,16 @@
         <input ng-model="post.author">
     <button>Create Post</button>
 </form>
+<h3>read all posts</h3>
+<button ng-onclick="readAll ()">read all</button>
+
+<!--read-->
+<ul>
+    <li ng-repeat="item in postList">
+        <div>
+            <strong>ID:</strong>{{ item.id }} <br>
+            <strong>Name:</strong>{{ item.title }} <br>
+            <strong>author:</strong>{{ item.author }} <br>
+        </div>
+    </li>
+</ul>
