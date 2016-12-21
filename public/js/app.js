@@ -32,7 +32,7 @@ app.controller('MyApp.PostPageController',[
         console.log('controller for posts created')
         $scope.post ={};
         $scope.postList =[];
-
+        //create
         $scope.create = function (){
             console.log('creating post',$scope.post);
 
@@ -51,6 +51,7 @@ app.controller('MyApp.PostPageController',[
                 console.error('this is the error', response);
             })
         }
+        //read
         $scope.readAll = function(){
             console.log('updatepost');
             $http ({
@@ -67,6 +68,7 @@ app.controller('MyApp.PostPageController',[
                 console.error('this is the error', response);
             })
         }
+        //update
         $scope.updatePost = function(){
             console.log('update post working');
             $http ({
@@ -82,6 +84,7 @@ app.controller('MyApp.PostPageController',[
                 console.error('this is the error', response);
             })
         }
+        //delete
         $scope.deletePost = function(){
             console.log('delete post working');
             $http ({
